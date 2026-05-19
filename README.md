@@ -1,2 +1,2 @@
 # astro-portfolio
-Personal Portfolio site
+Personal Portfolio site, built with Astro
