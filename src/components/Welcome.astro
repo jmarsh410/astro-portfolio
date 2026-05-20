@@ -4,7 +4,9 @@
 
 <main>
   <section id="hero">
-    <h1>I'm Je<span>red Mars</span>hall. <br /> I make things for the Web.</h1>
+    <h1>
+      I'm JE<span>RED MARS</span>HALL <br /> I make things for the Web.
+    </h1>
     <p>Performant, delightful, accessible things.</p>
   </section>
   <div class="solar-system-container">
@@ -18,6 +20,10 @@
       </div>
     </div>
   </div>
+  <section class="work">
+    <h2>Work</h2>
+    <article></article>
+  </section>
 </main>
 
 <style>
@@ -30,6 +36,9 @@
     }
   }
   main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer-2);
   }
   #hero {
     text-align: center;
@@ -39,6 +48,9 @@
     span {
       color: red;
     }
+  }
+  h2 {
+    text-align: center;
   }
   .solar-system-container {
     aspect-ratio: 3/1;
@@ -54,6 +66,7 @@
     width: 20px;
     height: 20px;
     background-color: var(--foreground);
+    /* background-color: yellow; */
     border-radius: 100%;
     top: 50%;
     left: 50%;
@@ -106,7 +119,7 @@
         background-color: red;
         position: absolute;
         right: 0;
-        top: 50%;
+        top: calc(50% + 2px);
       }
       &:before {
         transform: translate(50%, -50%) rotateX(90deg);
