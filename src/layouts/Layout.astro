@@ -1,0 +1,28 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Jered's Portfolio Site</title>
+  </head>
+  <Header />
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+</style>

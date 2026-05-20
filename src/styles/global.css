@@ -1,0 +1,24 @@
+:root {
+  --background: black;
+  --foreground: white;
+
+  /* spacers */
+  --spacer: 1rem;
+  --spacer-025: calc(var(--spacer) * .25);
+  --spacer-05: calc(var(--spacer) * .5);
+  --spacer-105: calc(var(--spacer) * 1.5);
+  --spacer-2: calc(var(--spacer) * 2);
+  --spacer-3: calc(var(--spacer) * 3);
+  --spacer-4: calc(var(--spacer) * 4);
+  --spacer-5: calc(var(--spacer) * 5);
+}
+
+.dark {
+  --background: white;
+  --foreground: black;
+}
+
+/* font declaration */
+body {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}

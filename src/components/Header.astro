@@ -1,0 +1,75 @@
+---
+const {
+  url: { pathname },
+} = Astro;
+
+const links = [
+  {
+    text: "Work",
+    href: "/",
+    isCurrent: pathname === "/",
+  },
+  {
+    text: "About",
+    href: "/about",
+    isCurrent: pathname === "/about",
+  },
+  {
+    text: "Resume",
+    href: "/resume",
+    isCurrent: pathname === "/resume",
+  },
+];
+---
+
+<header>
+  <ul>
+    {
+      links.map(({ href, text, isCurrent }) => {
+        return (
+          <li>
+            <a class={`${isCurrent ? "current" : ""}`} href={href}>
+              <span>{text}</span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</header>
+
+<style>
+  header {
+    padding: var(--spacer);
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: var(--spacer-2);
+    list-style-type: none;
+  }
+  a {
+    color: var(--foreground);
+    text-decoration: none;
+    border-radius: 0.25rem;
+  }
+  a:after {
+    content: "";
+    display: block;
+    padding-bottom: 1px;
+    border-bottom: 2px solid var(--foreground);
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  a:hover:not(.current):after,
+  a.current:after {
+    transform: scaleX(100%);
+  }
+  a:focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: var(--spacer-05);
+  }
+</style>

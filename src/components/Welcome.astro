@@ -1,0 +1,119 @@
+---
+
+---
+
+<main>
+  <section id="hero">
+    <h1>I'm Je<span>red Mars</span>hall. <br /> I make things for the Web.</h1>
+    <p>Performant, delightful, accessible things.</p>
+  </section>
+  <div class="solar-system-container">
+    <div class="solar-system">
+      <div class="sun"></div>
+      <div class="planets">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="mars"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<style>
+  @keyframes spin {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    100% {
+      transform: rotateZ(-360deg);
+    }
+  }
+  main {
+  }
+  #hero {
+    text-align: center;
+  }
+  h1 {
+    line-height: 1.75;
+    span {
+      color: red;
+    }
+  }
+  .solar-system-container {
+    aspect-ratio: 3/1;
+    overflow: hidden;
+    position: relative;
+  }
+  .solar-system {
+    position: relative;
+    perspective: 1000px;
+    transform: translateY(-35%);
+  }
+  .sun {
+    width: 20px;
+    height: 20px;
+    background-color: var(--foreground);
+    border-radius: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+  /* planets */
+  .planets {
+    margin: var(--spacer-2) auto 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+
+    transform: rotateX(80deg) rotateY(-10deg);
+    transform-style: preserve-3d;
+
+    .sun {
+      background-color: var(--foreground);
+    }
+
+    div {
+      background-color: transparent;
+      border-radius: 100%;
+      border: 2px solid var(--foreground);
+
+      /* progressively enhance the sibling-index stuff */
+      width: calc(80vw * (sibling-index() / 4));
+      height: calc(80vw * (sibling-index() / 4));
+
+      max-inline-size: calc(40rem * (sibling-index() / 4));
+      max-block-size: calc(40rem * (sibling-index() / 4));
+
+      grid-area: 1/1;
+    }
+
+    .mars {
+      position: relative;
+      animation: spin 20s linear infinite;
+      transform-style: preserve-3d;
+
+      &:before,
+      &:after {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background-color: red;
+        position: absolute;
+        right: 0;
+        top: 50%;
+      }
+      &:before {
+        transform: translate(50%, -50%) rotateX(90deg);
+      }
+      &:after {
+        transform: translate(50%, -50%) rotateX(90deg) rotateY(90deg);
+      }
+    }
+  }
+</style>
