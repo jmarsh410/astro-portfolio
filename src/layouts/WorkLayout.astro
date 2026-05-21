@@ -1,0 +1,11 @@
+---
+import Layout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+const { title, image, tags } = frontmatter;
+---
+
+<Layout>
+  <h1>{title}</h1>
+  <img src={image.url} alt={image.alt} />
+  <slot />
+</Layout>
