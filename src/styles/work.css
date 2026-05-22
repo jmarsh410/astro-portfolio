@@ -1,0 +1,4 @@
+h2 {
+  margin-block-start: var(--spacer-3);
+  margin-block-end: var(--spacer);
+}

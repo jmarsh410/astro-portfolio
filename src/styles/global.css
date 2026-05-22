@@ -1,5 +1,16 @@
 :root {
-  --background: black;
+  --black-1: oklch(0.9581468870268093 0 none);
+  --black-2: oklch(0.8883696500007239 0 none);
+  --black-3: oklch(0.7794404798137914 0 none);
+  --black-4: oklch(0.6829534013134412 0 none);
+  --black-5: oklch(0.5931033171849609 0 none);
+  --black-6: oklch(0.5067569125296858 0 none);
+  --black-7: oklch(0.42023714570450815 0 none);
+  --black-8: oklch(0.3406970568972224 0 none);
+  --black-9: oklch(0.2603248134180716 0 none);
+  --black-10: oklch(0 0 none);
+
+  --background: var(--black-10);
   --foreground: white;
 
   /* spacers */
