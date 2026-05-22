@@ -2,6 +2,9 @@
 const allWork = Object.values(
   import.meta.glob("../pages/work/*.md", { eager: true }),
 );
+const sortedWork = allWork.sort((a: any, b: any) => {
+  return new Date(a.frontmatter.date) > new Date(b.frontmatter.date) ? -1 : 1;
+});
 ---
 
 <main>
@@ -24,17 +27,45 @@ const allWork = Object.values(
   </div>
   <section class="work">
     <h2>Work</h2>
-    <ul>
+    <ul class="card-container">
       {
-        allWork.map((work: any) => {
+        sortedWork.map((work: any) => {
           const {
-            frontmatter: { thumb, title },
+            frontmatter: { thumb, title, tags },
           } = work;
           return (
             <li>
-              <article>
+              <article class="card">
                 {thumb?.url && <img src={thumb.url} alt={thumb.alt} />}
-                <a href={work.url}>{title}</a>
+                <div class="card__text">
+                  <div>
+                    <a href={work.url}>
+                      {title}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-move-right-icon lucide-move-right"
+                      >
+                        <>
+                          <path d="M18 8L22 12L18 16" />
+                          <path d="M2 12H22" />
+                        </>
+                      </svg>
+                    </a>
+                  </div>
+                  <span class="tags">
+                    {tags.map((t: any) => (
+                      <span>{t}</span>
+                    ))}
+                  </span>
+                </div>
               </article>
             </li>
           );
@@ -153,5 +184,44 @@ const allWork = Object.values(
         transform: translate(50%, -50%) rotateX(90deg) rotateY(90deg);
       }
     }
+  }
+  .card-container {
+    display: grid;
+    gap: var(--spacer);
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(auto, 1fr); */
+  }
+  ul {
+    list-style-type: none;
+  }
+  .card {
+    border: 2px solid var(--foreground);
+    border-radius: var(--spacer);
+    overflow: hidden;
+    background-color: var(--black-9);
+
+    img {
+      width: 100%;
+    }
+
+    a {
+      color: var(--foreground);
+      font-family: var(--display);
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    svg {
+      margin-inline-start: var(--spacer-025);
+    }
+  }
+  .card__text {
+    padding: var(--spacer);
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
   }
 </style>
