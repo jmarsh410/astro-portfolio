@@ -4,8 +4,12 @@ title: "Planet GO!"
 image:
   url: "/projects/planet-go/planet-go-hero.jpg"
   alt: "Planet Go! site as seen through the mobile, tablet, and desktop views"
+thumb:
+  url: "/projects/planet-go/planet-go-thumb.jpg"
+  alt: "Thumbnail showing Planet Go! logo. A Hot air ballon with Planet Go spelled beside it"
 tags:
-  ["javascript", "css", "html", "dev", "mobile first", "responseive web design"]
+  ["javascript", "css", "html", "dev", "mobile first", "responsive web design"]
+date: "1/1/2013"
 ---
 
 ## Background

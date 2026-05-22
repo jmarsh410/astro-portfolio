@@ -53,8 +53,8 @@ const { title, image, tags, note } = frontmatter;
 <style>
   body {
     max-inline-size: 80ch;
-    margin: 0 auto;
-    padding: var(--spacer);
+    margin: 0 auto var(--spacer-4);
+    padding-inline: var(--spacer);
   }
   main {
     margin-top: var(--spacer-2);
@@ -72,12 +72,14 @@ const { title, image, tags, note } = frontmatter;
     display: flex;
     gap: var(--spacer);
     align-items: center;
+    flex-wrap: wrap;
     margin-block-start: var(--spacer-05);
     margin-block-end: var(--spacer);
   }
   .tag {
     background-color: var(--black-9);
-    padding: var(--spacer-05);
+    padding-block: var(--spacer-05);
+    padding-inline: var(--spacer);
     border-radius: var(--spacer-05);
   }
   .note {

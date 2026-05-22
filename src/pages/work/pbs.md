@@ -4,7 +4,11 @@ title: "PBS Kids"
 image:
   url: "/projects/pbs-internship/pbs-internship-hero.jpg"
   alt: "Graphics and projects Jered worked on at PBS"
+thumb:
+  url: "/projects/pbs-internship/pbs-games-thumb.jpg"
+  alt: "Thumbnail image showing PBS KIDS Logo in foreground and Game graphics in the background"
 tags: ["javascript", "css", "html", "dev", "web design", "ux"]
+date: "1/1/2012"
 ---
 
 ## Background

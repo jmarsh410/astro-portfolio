@@ -5,7 +5,11 @@ tags: ["javascript", "dev", "html", "css"]
 image:
   url: "/projects/the-zebra/zebra-homepage-small.jpeg"
   alt: "The Zebra homepage"
+thumb:
+  url: "/projects/the-zebra/zebra-thumb-logo.png"
+  alt: "A thumbnail displaying the zebra's logo"
 # note: "Note: I worked on a LOT of projects at The Zebra over 8 years, so I've broken the larger ones out to their own pages. This page serves as a more general overview."
+date: "1/1/2026"
 ---
 
 ## Background

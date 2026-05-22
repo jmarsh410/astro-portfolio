@@ -4,7 +4,11 @@ title: "Volusion"
 image:
   url: "/projects/volusion/volusion-hero.jpg"
   alt: "Collage of Volusion Sites Jered has made"
+thumb:
+  url: "/projects/volusion/volusion-thumb.jpg"
+  alt: "thumbnail displaying volusion logo"
 tags: ["javascript", "less", "html", "dev"]
+date: "1/1/2014"
 ---
 
 ## Background

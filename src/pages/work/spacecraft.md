@@ -5,6 +5,10 @@ tags: ["javascript", "css", "html", "dev", "cms", "animation"]
 image:
   url: "/projects/spacecraft/spacecraft-hero.jpg"
   alt: "The Spacecraft Design Panel where users edit design settings"
+thumb:
+  url: "/projects/spacecraft/spacecraft-thumb.jpg"
+  alt: "Thumbnail displaying Spacecraft logo. A serif S surrounded by circling rockets"
+date: "1/1/2017"
 ---
 
 Update: Spacecraft is now [Marketing 360](https://www.madwire.com/blog-news-updates/madwire-acquires-spacecraft-to-bring-powerful-website-building-technology-to-their-smb-platform)

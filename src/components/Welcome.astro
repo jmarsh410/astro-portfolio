@@ -1,5 +1,7 @@
 ---
-
+const allWork = Object.values(
+  import.meta.glob("../pages/work/*.md", { eager: true }),
+);
 ---
 
 <main>
@@ -22,7 +24,23 @@
   </div>
   <section class="work">
     <h2>Work</h2>
-    <article></article>
+    <ul>
+      {
+        allWork.map((work: any) => {
+          const {
+            frontmatter: { thumb, title },
+          } = work;
+          return (
+            <li>
+              <article>
+                {thumb?.url && <img src={thumb.url} alt={thumb.alt} />}
+                <a href={work.url}>{title}</a>
+              </article>
+            </li>
+          );
+        })
+      }
+    </ul>
   </section>
 </main>
 
@@ -51,6 +69,7 @@
   }
   h1 {
     font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+    margin-block-end: var(--spacer-2);
     span {
       color: red;
     }
