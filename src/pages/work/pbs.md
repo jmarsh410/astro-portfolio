@@ -23,7 +23,7 @@ Edit: Since my time at PBS, they have gone through a redesign, making everything
 
 ## Process
 
-The PBS Kids department engrained in me a long lasting love of sketching out my ideas. Bigger paper meant bigger ideas, and I was often surrounded by wireframes and doodles. When I needed to create a web page, or design a graphic, I would start on paper, move to digital wireframes, then mockups, get approval/feedback from my supervisors, and then create the final product. For web development projects, I'd often discuss my desired approach with the other developers, get feedback and then manually upload the finalized assets to the PBS file server.
+The PBS Kids department engrained in me a long lasting love of sketching out my ideas. Bigger paper meant bigger ideas, and I was often surrounded by wireframes and doodles. When I needed to create a web page, or design a graphic, I would start on paper, move to digital wireframes, then mockups, get approval/feedback from my supervisors, and then create the final product. For web development projects, I'd often discuss my desired approach with the other developers, get feedback and then manually upload, via FTP client, the finalized assets and webpages to the PBS file server.
 
 ![First picture of sketches from notebook](/projects/pbs-internship/sketch1.jpg)
 ![Second picture of sketches from notebook](/projects/pbs-internship/sketch2.jpg)

@@ -1,4 +1,5 @@
 :root {
+  /* colors */
   --black-1: oklch(0.9581468870268093 0 none);
   --black-2: oklch(0.8883696500007239 0 none);
   --black-3: oklch(0.7794404798137914 0 none);
@@ -12,6 +13,8 @@
 
   --background: var(--black-10);
   --foreground: white;
+
+  --accent: oklch(0.58 0.21 27);
 
   /* spacers */
   --spacer: 1rem;
