@@ -1,6 +1,7 @@
 ---
 import Layout from "./Layout.astro";
 import "../styles/work.css";
+import Tags from "../components/Tags.astro";
 const { frontmatter } = Astro.props;
 const { title, image, tags, note } = frontmatter;
 ---
@@ -11,14 +12,10 @@ const { title, image, tags, note } = frontmatter;
       <img src={image.url} alt={image.alt} />
     </div>
     <h1>{title}</h1>
-    <p class="tags">
+    <div class="tags">
       <span>tags: </span>
-      {
-        tags.map((tag) => {
-          return <span class="tag">{tag}</span>;
-        })
-      }
-    </p>
+      <Tags tags={tags} />
+    </div>
     {
       !!note && (
         <div class="note">
