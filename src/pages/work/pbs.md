@@ -7,7 +7,7 @@ image:
 thumb:
   url: "/projects/pbs-internship/pbs-games-thumb.jpg"
   alt: "Thumbnail image showing PBS KIDS Logo in foreground and Game graphics in the background"
-tags: ["javascript", "css", "html", "dev", "web design", "ux"]
+tags: ["js", "css", "html", "dev", "design", "ux"]
 date: "1/1/2012"
 ---
 

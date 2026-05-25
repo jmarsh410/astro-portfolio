@@ -7,8 +7,7 @@ image:
 thumb:
   url: "/projects/planet-go/planet-go-thumb.jpg"
   alt: "Thumbnail showing Planet Go! logo. A Hot air ballon with Planet Go spelled beside it"
-tags:
-  ["javascript", "css", "html", "dev", "mobile first", "responsive web design"]
+tags: ["js", "css", "html", "dev", "mobile first", "responsive web design"]
 date: "1/1/2013"
 ---
 

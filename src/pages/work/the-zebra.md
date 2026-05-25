@@ -1,7 +1,7 @@
 ---
 layout: "../../Layouts/WorkLayout.astro"
 title: "The Zebra"
-tags: ["javascript", "dev", "html", "css"]
+tags: ["js", "html", "css", "dev"]
 image:
   url: "/projects/the-zebra/zebra-homepage-small.jpeg"
   alt: "The Zebra homepage"

@@ -1,7 +1,7 @@
 ---
 layout: "../../Layouts/WorkLayout.astro"
 title: "Spacecraft"
-tags: ["javascript", "css", "html", "dev", "cms", "animation"]
+tags: ["js", "css", "html", "dev", "cms", "animation"]
 image:
   url: "/projects/spacecraft/spacecraft-hero.jpg"
   alt: "The Spacecraft Design Panel where users edit design settings"

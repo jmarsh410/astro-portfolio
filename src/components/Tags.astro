@@ -1,0 +1,35 @@
+---
+const { tags, limit } = Astro.props;
+---
+
+<ul>
+  {
+    tags
+      .filter((_: string, i: number) => {
+        return limit ? i < limit : true;
+      })
+      .map((tag: string) => {
+        return <li>{tag}</li>;
+      })
+  }
+</ul>
+
+<style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacer-05);
+
+    font-size: 0.75rem;
+  }
+  li {
+    background-color: oklch(from white l c h / 0.1);
+    padding-block: var(--spacer-05);
+    padding-inline: var(--spacer);
+    border-radius: var(--spacer-05);
+  }
+</style>

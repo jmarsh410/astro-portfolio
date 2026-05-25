@@ -7,7 +7,7 @@ image:
 thumb:
   url: "/projects/volusion/volusion-thumb.jpg"
   alt: "thumbnail displaying volusion logo"
-tags: ["javascript", "less", "html", "dev"]
+tags: ["js", "less", "html", "dev"]
 date: "1/1/2014"
 ---
 

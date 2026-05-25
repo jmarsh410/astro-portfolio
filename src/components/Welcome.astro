@@ -1,4 +1,6 @@
 ---
+import Tags from "./Tags.astro";
+
 const allWork = Object.values(
   import.meta.glob("../pages/work/*.md", { eager: true }),
 );
@@ -60,11 +62,9 @@ const sortedWork = allWork.sort((a: any, b: any) => {
                       </svg>
                     </a>
                   </div>
-                  <span class="tags">
-                    {tags.map((t: any) => (
-                      <span>{t}</span>
-                    ))}
-                  </span>
+                  <div class="tags">
+                    <Tags tags={tags} limit={3} />
+                  </div>
                 </div>
               </article>
             </li>
@@ -220,8 +220,8 @@ const sortedWork = allWork.sort((a: any, b: any) => {
   .card__text {
     padding: var(--spacer);
   }
+
   .tags {
-    display: flex;
-    flex-wrap: wrap;
+    margin-block-start: var(--spacer-05);
   }
 </style>
