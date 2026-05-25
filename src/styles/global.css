@@ -17,11 +17,17 @@
   --spacer: 1rem;
   --spacer-025: calc(var(--spacer) * .25);
   --spacer-05: calc(var(--spacer) * .5);
+  --spacer-1: calc(var(--spacer) * 1);
   --spacer-105: calc(var(--spacer) * 1.5);
   --spacer-2: calc(var(--spacer) * 2);
   --spacer-3: calc(var(--spacer) * 3);
   --spacer-4: calc(var(--spacer) * 4);
   --spacer-5: calc(var(--spacer) * 5);
+
+  /* fonts */
+  --display: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+      "DejaVu Sans Mono", monospace;
+  --body: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif
 }
 
 .dark {
@@ -31,11 +37,15 @@
 
 /* font declaration */
 body {
-  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  font-family: var(--body);
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family:
-      ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
-      "DejaVu Sans Mono", monospace;
+  font-family: var(--display);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: var(--spacer-05);
+  border-radius: var(--spacer-025);
 }
