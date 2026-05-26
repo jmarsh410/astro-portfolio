@@ -33,6 +33,14 @@
   --body: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif
 }
 
+html {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+      scroll-timeline: --html-timeline;
+    }
+  }
+}
+
 .dark {
   --background: white;
   --foreground: black;
@@ -41,9 +49,14 @@
 /* font declaration */
 body {
   font-family: var(--body);
-  max-inline-size: 80ch;
-  margin: 0 auto var(--spacer-4);
-  padding-inline: var(--spacer);
+  position: relative;
+  margin-block-end: var(--spacer-4);
+
+  > * {
+    max-inline-size: 80ch;
+    margin: 0 auto;
+    padding-inline: var(--spacer);
+  }
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -58,4 +71,69 @@ a:focus-visible {
   outline: 2px solid var(--foreground);
   outline-offset: var(--spacer-05);
   border-radius: var(--spacer-025);
+}
+
+/* animation for stars */
+@keyframes parallax {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10%);
+  }
+}
+
+/* a fun star background based on this codepen: https://codepen.io/jensaxena/pen/KQmvoK */
+.star-bg {
+  z-index: -1;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  max-inline-size: unset;
+
+  &:after {
+    content: "";
+    display: block;
+    height: 500vh;
+    background-size: 200px 200px;
+    background-image:
+      radial-gradient(
+        1px 1px at 25px 5px, 
+        var(--foreground), 
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at 50px 25px, 
+        var(--foreground), 
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at 125px 20px, 
+        var(--foreground), 
+        transparent
+      ),
+      radial-gradient(
+        1.5px 1.5px at 50px 75px, 
+        var(--foreground), 
+        transparent
+      ),
+      radial-gradient(
+        2px 2px at 15px 125px, 
+        var(--foreground), 
+        transparent
+      ),
+      radial-gradient(
+        2.5px 2.5px at 110px 80px, 
+        var(--foreground), 
+        transparent
+      );
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      @supports (animation-timeline: scroll()) {
+        animation: parallax linear;
+        animation-timeline: --html-timeline;
+      }
+    }
 }
