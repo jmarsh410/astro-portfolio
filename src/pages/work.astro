@@ -1,0 +1,125 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Tags from "./Tags.astro";
+
+const allWork = Object.values(
+  import.meta.glob("../pages/work/*.md", { eager: true }),
+);
+const sortedWork = allWork.sort((a: any, b: any) => {
+  return new Date(a.frontmatter.date) > new Date(b.frontmatter.date) ? -1 : 1;
+});
+---
+
+<Layout>
+  <section class="work">
+    <h1>Work</h1>
+    <ul class="card-list">
+      {
+        sortedWork.map((work: any) => {
+          const {
+            frontmatter: { thumb, title, tags },
+          } = work;
+          return (
+            <li>
+              <article class="card">
+                <a href={work.url}>
+                  <div class="card__content">
+                    {thumb?.url && <img src={thumb.url} alt={thumb.alt} />}
+                    <div class="card__text">
+                      <div class="title">
+                        {title}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-move-right-icon lucide-move-right"
+                        >
+                          <>
+                            <path d="M18 8L22 12L18 16" />
+                            <path d="M2 12H22" />
+                          </>
+                        </svg>
+                      </div>
+                      {/* <div class="tags">
+                        <Tags tags={tags} limit={3} />
+                      </div> */}
+                    </div>
+                  </div>
+                </a>
+              </article>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+</Layout>
+
+<style>
+  h1 {
+    margin: var(--spacer-3) 0 var(--spacer);
+    text-align: center;
+  }
+  .card-list {
+    display: grid;
+    gap: var(--spacer);
+
+    grid-template-columns: repeat(1, 1fr);
+
+    @media screen and (width > 360px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (width > 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .card {
+    a {
+      color: var(--foreground);
+      font-family: var(--display);
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+    }
+
+    svg {
+      margin-inline-start: var(--spacer-025);
+    }
+  }
+  .card__content {
+    border: 2px solid var(--foreground);
+    border-radius: var(--spacer);
+    background-color: var(--black-9);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+  .card__text {
+    padding: var(--spacer);
+
+    .title {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .tags {
+    margin-block-start: var(--spacer-05);
+  }
+</style>

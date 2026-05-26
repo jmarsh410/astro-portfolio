@@ -1,12 +1,5 @@
 ---
-import Tags from "./Tags.astro";
 
-const allWork = Object.values(
-  import.meta.glob("../pages/work/*.md", { eager: true }),
-);
-const sortedWork = allWork.sort((a: any, b: any) => {
-  return new Date(a.frontmatter.date) > new Date(b.frontmatter.date) ? -1 : 1;
-});
 ---
 
 <main>
@@ -16,7 +9,8 @@ const sortedWork = allWork.sort((a: any, b: any) => {
     </h1>
     <p>Performant, delightful, accessible things.</p>
   </section>
-  <div class="solar-system-container">
+  <!-- this is purely decorative content, remove it from a11y tree -->
+  <div class="solar-system-container" aria-hidden="true">
     <div class="solar-system">
       <div class="sun"></div>
       <div class="planets">
@@ -27,53 +21,47 @@ const sortedWork = allWork.sort((a: any, b: any) => {
       </div>
     </div>
   </div>
-  <section class="work">
-    <h2>Work</h2>
-    <ul class="card-list">
-      {
-        sortedWork.map((work: any) => {
-          const {
-            frontmatter: { thumb, title, tags },
-          } = work;
-          return (
-            <li>
-              <article class="card">
-                <a href={work.url}>
-                  <div class="card__content">
-                    {thumb?.url && <img src={thumb.url} alt={thumb.alt} />}
-                    <div class="card__text">
-                      <div class="title">
-                        {title}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="lucide lucide-move-right-icon lucide-move-right"
-                        >
-                          <>
-                            <path d="M18 8L22 12L18 16" />
-                            <path d="M2 12H22" />
-                          </>
-                        </svg>
-                      </div>
-                      {/* <div class="tags">
-                        <Tags tags={tags} limit={3} />
-                      </div> */}
-                    </div>
-                  </div>
-                </a>
-              </article>
-            </li>
-          );
-        })
-      }
-    </ul>
+  <section>
+    <h2>About</h2>
+    <p>
+      I'm a Front End Web Developer living in Austin, TX. I've been developing
+      for the web for 15+ years and I believe that websites should be fast and
+      easy to use, no matter <b>who you are</b>, <b>where you live</b>, or <b
+        >what device you own</b
+      >. I enjoy designing and developing websites and web apps. Taking in
+      client/product feedback, researching new tools, working out the little
+      puzzles that coding provides. Above all, I like to create fun, easily
+      understandable experiences for users.
+    </p>
+  </section>
+  <section>
+    <h2>Why the focus on Accessibility?</h2>
+    <p>
+      Accessible websites are better websites. But in terms of FE development,
+      the industry still misses the mark <a
+        href="https://webaim.org/projects/million/#errors"
+        >pretty consistently</a
+      >. We should try to be an exception to that trend and ensure our sites are
+      usable for all. I love to browse using keyboard navigation, so its a
+      moment of delight for me when a website supports that. I don't have an
+      eyesight or motor impairment, but if I can still navigate using the
+      keyboard, it improves my experience. Ensuring an interface is usable for a
+      specific browsing method doesn't just improve the UX for one group of
+      people, it improves it for everyone.
+    </p>
+  </section>
+  <section>
+    <h2>Why the focus on performance?</h2>
+    <p>
+      Its not a secret that the web is pretty bloated. Unnecessary scripts and
+      large photos slow websites down and cause users money when they have to
+      download all that information. Where possible, be intentional with the
+      data you send to the user. Not every user lives in the <a
+        href="https://www.smashingmagazine.com/2017/03/world-wide-web-not-wealthy-western-web-part-1/"
+        >Wealthy Western Web</a
+      > (that link is old by internet standards, but has always stuck in my head).
+      At the end of the day, its all about providing a good experience to users.
+    </p>
   </section>
 </main>
 
@@ -95,12 +83,13 @@ const sortedWork = allWork.sort((a: any, b: any) => {
     text-align: center;
     line-height: 1.75;
     text-wrap: pretty;
-    margin: var(--spacer-3) 0;
+    margin: var(--spacer-3) 0 var(--spacer);
     font-family:
       ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
       "DejaVu Sans Mono", monospace;
   }
   h1 {
+    text-align: center;
     text-wrap: pretty;
     font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
     margin-block-end: var(--spacer-2);
@@ -109,10 +98,11 @@ const sortedWork = allWork.sort((a: any, b: any) => {
     }
   }
   h2 {
-    text-align: center;
+    margin-block-end: var(--spacer);
   }
   .solar-system-container {
     position: relative;
+    margin-block-end: var(--spacer-2);
   }
   .solar-system {
     position: relative;
@@ -192,60 +182,5 @@ const sortedWork = allWork.sort((a: any, b: any) => {
         transform: translate(50%, -50%) rotateX(90deg) rotateY(90deg);
       }
     }
-  }
-  .card-list {
-    display: grid;
-    gap: var(--spacer);
-
-    grid-template-columns: repeat(1, 1fr);
-
-    @media screen and (width > 360px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media screen and (width > 768px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  .card {
-    a {
-      color: var(--foreground);
-      font-family: var(--display);
-      text-decoration: none;
-      font-weight: bold;
-      display: flex;
-      flex-direction: column;
-    }
-
-    svg {
-      margin-inline-start: var(--spacer-025);
-    }
-  }
-  .card__content {
-    border: 2px solid var(--foreground);
-    border-radius: var(--spacer);
-    background-color: var(--black-9);
-    overflow: hidden;
-
-    img {
-      width: 100%;
-    }
-  }
-  .card__text {
-    padding: var(--spacer);
-
-    .title {
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .tags {
-    margin-block-start: var(--spacer-05);
   }
 </style>
