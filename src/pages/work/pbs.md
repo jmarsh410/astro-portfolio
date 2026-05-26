@@ -2,10 +2,10 @@
 layout: "../../Layouts/WorkLayout.astro"
 title: "PBS Kids"
 image:
-  url: "/projects/pbs-internship/pbs-internship-hero.jpg"
+  url: "/astro-portfolio/projects/pbs-internship/pbs-internship-hero.jpg"
   alt: "Graphics and projects Jered worked on at PBS"
 thumb:
-  url: "/projects/pbs-internship/pbs-games-thumb.jpg"
+  url: "/astro-portfolio/projects/pbs-internship/pbs-games-thumb.jpg"
   alt: "Thumbnail image showing PBS KIDS Logo in foreground and Game graphics in the background"
 tags: ["js", "css", "html", "dev", "design", "ux"]
 date: "1/1/2012"
@@ -25,12 +25,12 @@ Edit: Since my time at PBS, they have gone through a redesign, making everything
 
 The PBS Kids department engrained in me a long lasting love of sketching out my ideas. Bigger paper meant bigger ideas, and I was often surrounded by wireframes and doodles. When I needed to create a web page, or design a graphic, I would start on paper, move to digital wireframes, then mockups, get approval/feedback from my supervisors, and then create the final product. For web development projects, I'd often discuss my desired approach with the other developers, get feedback and then manually upload, via FTP client, the finalized assets and webpages to the PBS file server.
 
-![First picture of sketches from notebook](/projects/pbs-internship/sketch1.jpg)
-![Second picture of sketches from notebook](/projects/pbs-internship/sketch2.jpg)
-![Third picture of sketches from notebook](/projects/pbs-internship/sketch3.jpg)
-![Fourth picture of sketches from notebook](/projects/pbs-internship/sketch4.jpg)
+<!-- ![First picture of sketches from notebook](/astro-portfolio/projects/pbs-internship/sketch1.jpg)
+![Second picture of sketches from notebook](/astro-portfolio/projects/pbs-internship/sketch2.jpg)
+![Third picture of sketches from notebook](/astro-portfolio/projects/pbs-internship/sketch3.jpg)
+![Fourth picture of sketches from notebook](/astro-portfolio/projects/pbs-internship/sketch4.jpg) -->
 
 ## Accomplishments
 
-- Designing and adding PBS Kids Marketing Graphics to the website ![Pbs Kids Graphics](/projects/pbs-internship/graphics.jpg)
+- Designing and adding PBS Kids Marketing Graphics to the website ![Pbs Kids Graphics](/astro-portfolio/projects/pbs-internship/graphics.jpg)
 - PBS Kids GO! Homepage
