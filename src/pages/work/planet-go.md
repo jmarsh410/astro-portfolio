@@ -1,5 +1,5 @@
 ---
-layout: "../../Layouts/WorkLayout.astro"
+layout: "../../layouts/WorkLayout.astro"
 title: "Planet GO!"
 image:
   url: "/astro-portfolio/projects/planet-go/planet-go-hero.jpg"

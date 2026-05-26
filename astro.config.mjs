@@ -5,5 +5,5 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://jmarsh410.github.io",
   // site: 'https://jmarsh410.github.io/astro-portfolio'
-  // base: "/astro-portfolio",
+  base: "/astro-portfolio",
 });

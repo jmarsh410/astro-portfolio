@@ -1,5 +1,5 @@
 ---
-layout: "../../Layouts/WorkLayout.astro"
+layout: "../../layouts/WorkLayout.astro"
 title: "The Zebra"
 tags: ["js", "html", "css", "dev"]
 image:

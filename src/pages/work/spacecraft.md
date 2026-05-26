@@ -1,5 +1,5 @@
 ---
-layout: "../../Layouts/WorkLayout.astro"
+layout: "../../layouts/WorkLayout.astro"
 title: "Spacecraft"
 tags: ["js", "css", "html", "dev", "cms", "animation"]
 image:

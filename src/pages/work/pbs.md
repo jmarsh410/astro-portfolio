@@ -1,5 +1,5 @@
 ---
-layout: "../../Layouts/WorkLayout.astro"
+layout: "../../layouts/WorkLayout.astro"
 title: "PBS Kids"
 image:
   url: "/astro-portfolio/projects/pbs-internship/pbs-internship-hero.jpg"
