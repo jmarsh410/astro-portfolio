@@ -30,7 +30,7 @@ The PBS Kids department engrained in me a long lasting love of sketching out my 
 ![Third picture of sketches from notebook](/projects/pbs-internship/sketch3.jpg)
 ![Fourth picture of sketches from notebook](/projects/pbs-internship/sketch4.jpg)
 
-## Important Features
+## Accomplishments
 
 - Designing and adding PBS Kids Marketing Graphics to the website ![Pbs Kids Graphics](/projects/pbs-internship/graphics.jpg)
 - PBS Kids GO! Homepage
