@@ -18,7 +18,7 @@ The Zebra helps users find and compare car insurance quotes. Users go through a 
 
 ## Responsibilities
 
-My time at The Zebra was split between feature development for the suite of web apps, all isomorphic and performing SSR, and working on improving the front end tech stack and developer experience as a whole.
+My time at The Zebra was split between feature development for the suite of web apps, all isomorphic and performing SSR, and improving the front end tech stack and developer experience as a whole.
 
 ## Tech Stack
 
@@ -26,14 +26,15 @@ React, Next, Typescript, Node, Storybook, SCSS, MockServer, Optimizely, Eppo, Gi
 
 ## Process
 
-Teams at The Zebra consisted of a PM, EM, FE devs, BE devs, Designer, and a QA. Once a feature was decided on, I'd work together with the PM and Designer to identify any red flags or callouts, resolve those if they existed, and then locally develop the feature. Once in a ready state, I'd commit the feature branch to an ephemeral environment, heavily test it along with the QA, and then merge and deploy the feature once the QA gave the signoff and all the automated tests passed for the branch.
+Teams at The Zebra consisted of a PM, EM, FE devs, BE devs, Designer, and a QA. More often than not I'd operate as a tech lead for my team: planning out, creating, and story pointing the tickets needed to get a feature over the finish line. Often requiring conversations regarding what can be cut for the MVP and what technologies we can use to get there faster. When working on a feature personally, I'd talk with the PM and Designer to identify any red flags or callouts, resolve those if they existed, and then locally develop the feature. Once in a ready state, I'd commit the feature branch to an ephemeral environment, heavily test it along with the QA, and then merge and deploy the feature once the QA gave the signoff and all the automated tests passed for the branch.
+
 Outside of individual feature development, I helped run the Frontend Guild, driving architecture, performance, and accessibility discussions for the company. Once an initiative was decided on, I'd create docs and a project plan for the initiative, assigning work to myself and others to help complete it.
 
-## Important Features
+## Accomplishments
 
-- Made the Results page responsive, reducing need for mobile specific web app. Halved feature development time, improved devX, made experience more consistent for users.
+- Made the Results page responsive, reducing need for mobile specific web app. Halved feature development time, improved devX, and made experience more consistent for users.
 - Refactored rate request logic for results page, leading to 75% reduction of cost for vendors and faster page load speed.
 - Saved Front end devs hours per week by removing reliance on local BE apps for local development
-- Swapped out unneeded A/B client side script with server side coin flipper. Reduced client side bundle size by 10% and sped up initial request timing by 33%
-- Implemented performance strategy and monitoring to entirety of company's suite of web apps. Establishing base line metrics for the company.
+- Swapped out unneeded A/B vendor client-side script with server side alternative. Reduced client side bundle size by 10% and sped up initial request timing by 33%
+- Implemented performance strategy and monitoring to entirety of company's suite of web apps. Establishing base line performance metrics for the company.
 - Revamped Front End Interview Process to be more equitable and inclusive

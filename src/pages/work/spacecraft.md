@@ -29,7 +29,7 @@ Vanilla JS, jQuery, Handlebar, SCSS, Github, Mocha, Chai, BrowserStack, Browseri
 
 The beginning of any project usually starts with a conversation between either the CEO or CTO and myself. However I was also given a lot of freedom to investigate and advocate for important new features that should be added to the platform. From there I'd work in a local dev environment, hammer away at the UI, commit it to a staging evironment, and submit it for review.
 
-## Important Features
+## Accomplishments
 
 - Add FE tests to entire component system using Mocha and Chai
 - Refactored marketing email template with heavy emphasis on cross browser/device consistency. As we all know, emails have always been a beast to make consistent and this was no different. Email testing software can in handy here, allowing us to visually inspect dozens of different browsers and devices to ensure that things looked consistent.

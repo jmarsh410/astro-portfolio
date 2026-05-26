@@ -1,4 +1,5 @@
 :root {
+  /* colors */
   --black-1: oklch(0.9581468870268093 0 none);
   --black-2: oklch(0.8883696500007239 0 none);
   --black-3: oklch(0.7794404798137914 0 none);
@@ -12,6 +13,8 @@
 
   --background: var(--black-10);
   --foreground: white;
+
+  --accent: oklch(0.69 0.14 21.36);
 
   /* spacers */
   --spacer: 1rem;
@@ -30,6 +33,14 @@
   --body: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif
 }
 
+html {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+      scroll-timeline: --html-timeline;
+    }
+  }
+}
+
 .dark {
   --background: white;
   --foreground: black;
@@ -38,14 +49,91 @@
 /* font declaration */
 body {
   font-family: var(--body);
+  position: relative;
+  margin-block-end: var(--spacer-4);
+
+  > * {
+    max-inline-size: 80ch;
+    margin: 0 auto;
+    padding-inline: var(--spacer);
+  }
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: var(--display);
 }
 
+a {
+  color: var(--accent);
+}
+
 a:focus-visible {
   outline: 2px solid var(--foreground);
   outline-offset: var(--spacer-05);
   border-radius: var(--spacer-025);
+}
+
+/* animation for stars */
+@keyframes parallax {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10%);
+  }
+}
+
+/* a fun star background based on this codepen: https://codepen.io/jensaxena/pen/KQmvoK */
+.star-bg {
+  z-index: -1;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  max-inline-size: unset;
+
+  &:after {
+    content: "";
+    display: block;
+    height: 500vh;
+    background-size: 200px 200px;
+    background-image:
+      radial-gradient(
+        1px 1px at 25px 5px, 
+        var(--foreground), 
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at 50px 25px, 
+        var(--foreground), 
+        transparent
+      ),
+      radial-gradient(
+        1px 1px at 125px 20px, 
+        var(--foreground), 
+        transparent
+      ),
+      radial-gradient(
+        1.5px 1.5px at 50px 75px, 
+        var(--foreground), 
+        transparent
+      ),
+      radial-gradient(
+        2px 2px at 15px 125px, 
+        var(--foreground), 
+        transparent
+      ),
+      radial-gradient(
+        2.5px 2.5px at 110px 80px, 
+        var(--foreground), 
+        transparent
+      );
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      @supports (animation-timeline: scroll()) {
+        animation: parallax linear;
+        animation-timeline: --html-timeline;
+      }
+    }
 }
