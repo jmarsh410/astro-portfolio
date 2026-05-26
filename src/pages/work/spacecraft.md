@@ -3,10 +3,10 @@ layout: "../../Layouts/WorkLayout.astro"
 title: "Spacecraft"
 tags: ["js", "css", "html", "dev", "cms", "animation"]
 image:
-  url: "/projects/spacecraft/spacecraft-hero.jpg"
+  url: "/astro-portfolio/projects/spacecraft/spacecraft-hero.jpg"
   alt: "The Spacecraft Design Panel where users edit design settings"
 thumb:
-  url: "/projects/spacecraft/spacecraft-thumb.jpg"
+  url: "/astro-portfolio/projects/spacecraft/spacecraft-thumb.jpg"
   alt: "Thumbnail displaying Spacecraft logo. A serif S surrounded by circling rockets"
 date: "1/1/2017"
 ---
