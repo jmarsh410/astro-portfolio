@@ -1,3 +1,5 @@
+@layer reset, base, theme, utilities;
+
 :root {
   /* colors */
   --black-1: oklch(0.9581468870268093 0 none);
@@ -18,8 +20,8 @@
 
   /* spacers */
   --spacer: 1rem;
-  --spacer-025: calc(var(--spacer) * .25);
-  --spacer-05: calc(var(--spacer) * .5);
+  --spacer-025: calc(var(--spacer) * 0.25);
+  --spacer-05: calc(var(--spacer) * 0.5);
   --spacer-1: calc(var(--spacer) * 1);
   --spacer-105: calc(var(--spacer) * 1.5);
   --spacer-2: calc(var(--spacer) * 2);
@@ -28,9 +30,12 @@
   --spacer-5: calc(var(--spacer) * 5);
 
   /* fonts */
-  --display: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
-      "DejaVu Sans Mono", monospace;
-  --body: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif
+  --display:
+    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
+  --body:
+    Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
+    sans-serif;
 }
 
 html {
@@ -52,14 +57,19 @@ body {
   position: relative;
   margin-block-end: var(--spacer-4);
 
-  > * {
+  & > * {
     max-inline-size: 80ch;
     margin: 0 auto;
     padding-inline: var(--spacer);
   }
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--display);
 }
 
@@ -99,41 +109,17 @@ a:focus-visible {
     height: 500vh;
     background-size: 200px 200px;
     background-image:
-      radial-gradient(
-        1px 1px at 25px 5px, 
-        var(--foreground), 
-        transparent
-      ),
-      radial-gradient(
-        1px 1px at 50px 25px, 
-        var(--foreground), 
-        transparent
-      ),
-      radial-gradient(
-        1px 1px at 125px 20px, 
-        var(--foreground), 
-        transparent
-      ),
-      radial-gradient(
-        1.5px 1.5px at 50px 75px, 
-        var(--foreground), 
-        transparent
-      ),
-      radial-gradient(
-        2px 2px at 15px 125px, 
-        var(--foreground), 
-        transparent
-      ),
-      radial-gradient(
-        2.5px 2.5px at 110px 80px, 
-        var(--foreground), 
-        transparent
-      );
+      radial-gradient(1px 1px at 25px 5px, var(--foreground), transparent),
+      radial-gradient(1px 1px at 50px 25px, var(--foreground), transparent),
+      radial-gradient(1px 1px at 125px 20px, var(--foreground), transparent),
+      radial-gradient(1.5px 1.5px at 50px 75px, var(--foreground), transparent),
+      radial-gradient(2px 2px at 15px 125px, var(--foreground), transparent),
+      radial-gradient(2.5px 2.5px at 110px 80px, var(--foreground), transparent);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+      animation: parallax linear;
+      animation-timeline: --html-timeline;
     }
-    @media (prefers-reduced-motion: no-preference) {
-      @supports (animation-timeline: scroll()) {
-        animation: parallax linear;
-        animation-timeline: --html-timeline;
-      }
-    }
+  }
 }
