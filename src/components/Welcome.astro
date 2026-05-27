@@ -93,6 +93,7 @@
     text-wrap: pretty;
     font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
     margin-block-end: var(--spacer-2);
+    background-color: var(--background);
     span {
       color: var(--accent);
     }
@@ -143,15 +144,47 @@
       background-color: transparent;
       border-radius: 100%;
       border: 2px solid var(--foreground);
-
-      /* progressively enhance the sibling-index stuff */
-      width: calc(80vw * (sibling-index() / 4));
-      height: calc(80vw * (sibling-index() / 4));
-
-      max-inline-size: calc(40rem * (sibling-index() / 4));
-      max-block-size: calc(40rem * (sibling-index() / 4));
-
       grid-area: 1/1;
+
+      @supports not (max-inline-size: calc(40rem * (sibling-index() / 4))) {
+        &:nth-child(1) {
+          inline-size: calc(80vw * (1 / 4));
+          block-size: calc(80vw * (1 / 4));
+
+          max-inline-size: calc(40rem * (1 / 4));
+          max-block-size: calc(40rem * (1 / 4));
+        }
+        &:nth-child(2) {
+          inline-size: calc(80vw * (2 / 4));
+          block-size: calc(80vw * (2 / 4));
+
+          max-inline-size: calc(40rem * (2 / 4));
+          max-block-size: calc(40rem * (2 / 4));
+        }
+        &:nth-child(3) {
+          inline-size: calc(80vw * (3 / 4));
+          block-size: calc(80vw * (3 / 4));
+
+          max-inline-size: calc(40rem * (3 / 4));
+          max-block-size: calc(40rem * (3 / 4));
+        }
+        &:nth-child(4) {
+          inline-size: calc(80vw * (4 / 4));
+          block-size: calc(80vw * (4 / 4));
+
+          max-inline-size: calc(40rem * (4 / 4));
+          max-block-size: calc(40rem * (4 / 4));
+        }
+      }
+
+      /* progressively enhance with sibling-index stuff */
+      @supports (max-inline-size: calc(40rem * (sibling-index() / 4))) {
+        inline-size: calc(80vw * (sibling-index() / 4));
+        block-size: calc(80vw * (sibling-index() / 4));
+
+        max-inline-size: calc(40rem * (sibling-index() / 4));
+        max-block-size: calc(40rem * (sibling-index() / 4));
+      }
     }
 
     .mars {

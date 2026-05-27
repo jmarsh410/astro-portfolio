@@ -6,4 +6,10 @@ export default defineConfig({
   site: "https://jmarsh410.github.io",
   // site: 'https://jmarsh410.github.io/astro-portfolio'
   base: "/astro-portfolio",
+
+  // if you want to view it on your phone
+  // server: {
+  //   host: "192.168.1.248",
+  //   port: 4321,
+  // },
 });
