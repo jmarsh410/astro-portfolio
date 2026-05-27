@@ -14,7 +14,7 @@ const sortedWork = allWork.sort((a: any, b: any) => {
 <Layout>
   <section class="work">
     <h1>Work</h1>
-    <ul class="card-list">
+    <ul class="card__list">
       {
         sortedWork.map((work: any) => {
           const {
@@ -67,7 +67,7 @@ const sortedWork = allWork.sort((a: any, b: any) => {
     margin: var(--spacer-3) 0 var(--spacer);
     text-align: center;
   }
-  .card-list {
+  .card__list {
     display: grid;
     gap: var(--spacer);
 
@@ -109,6 +109,10 @@ const sortedWork = allWork.sort((a: any, b: any) => {
     img {
       width: 100%;
     }
+  }
+
+  img {
+    aspect-ratio: auto 1/1;
   }
   .card__text {
     padding: var(--spacer);
