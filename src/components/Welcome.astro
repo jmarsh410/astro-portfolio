@@ -12,7 +12,16 @@
           <div></div>
           <div></div>
           <div></div>
-          <div class="mars"></div>
+          <div class="mars">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     </div>
@@ -79,7 +88,6 @@
   main {
     display: flex;
     flex-direction: column;
-    gap: var(--spacer-2);
   }
 
   #splash-page {
@@ -97,7 +105,7 @@
 
   #splash-page ~ section {
     max-inline-size: 80ch;
-    margin: 0 auto var(--spacer-2);
+    margin: 0 auto var(--spacer-4);
     padding-inline: var(--spacer);
   }
   #hero {
@@ -133,12 +141,14 @@
     /* font-size: 1.2rem; */
     font-weight: 500;
     line-height: 1.7;
+    b {
+      text-decoration: underline;
+    }
   }
   .solar-system-container {
     inline-size: 100%;
-    height: fit-content;
     position: relative;
-    margin-block-end: var(--spacer-2);
+    /* margin-block-end: var(--spacer-2); */
   }
   .solar-system {
     position: relative;
@@ -234,8 +244,9 @@
         animation: spin 20s linear infinite;
       }
 
-      &:before,
-      &:after {
+      /* &:before,
+      &:after, */
+      span {
         content: "";
         display: block;
         width: 1.5vw;
@@ -246,11 +257,37 @@
         right: 0;
         top: calc(50% + 2px);
       }
-      &:before {
-        transform: translate(50%, -50%) rotateX(90deg);
+      /* &:before {
+        transform: translate(50%, -50%) rotateY(0deg);
       }
       &:after {
-        transform: translate(50%, -50%) rotateX(90deg) rotateY(90deg);
+        transform: translate(50%, -50%) rotateY(calc(45deg) * 1);
+      } */
+
+      --translate: translate(70%, -50%);
+      span:nth-child(1) {
+        transform: var(--translate) rotateX(90deg) rotateY(calc(45deg * 1));
+      }
+      span:nth-child(2) {
+        transform: var(--translate) rotateX(90deg) rotateY(calc(45deg * 2));
+      }
+      span:nth-child(3) {
+        transform: var(--translate) rotateX(90deg) rotateY(calc(45deg * 3));
+      }
+      span:nth-child(4) {
+        transform: var(--translate) rotateX(90deg) rotateY(calc(45deg * 4));
+      }
+      span:nth-child(5) {
+        transform: var(--translate) rotateX(90deg) rotateY(calc(45deg * 5));
+      }
+      span:nth-child(6) {
+        transform: var(--translate) rotateX(90deg) rotateY(calc(45deg * 6));
+      }
+      span:nth-child(7) {
+        transform: var(--translate) rotateX(90deg) rotateY(calc(45deg * 7));
+      }
+      span:nth-child(8) {
+        transform: var(--translate) rotateX(90deg) rotateY(calc(45deg * 8));
       }
     }
   }
