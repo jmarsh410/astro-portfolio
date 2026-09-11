@@ -10,10 +10,10 @@
   --black-6: oklch(0.5067569125296858 0 none);
   --black-7: oklch(0.42023714570450815 0 none);
   --black-8: oklch(0.3406970568972224 0 none);
-  --black-9: oklch(0.2603248134180716 0 none);
+  --black-9: oklch(19.574% 0.00002 271.152);
   --black-10: oklch(0 0 none);
 
-  --background: var(--black-10);
+  --background: var(--black-9);
   --foreground: white;
 
   --accent: oklch(0.69 0.14 21.36);
@@ -36,6 +36,13 @@
   --body:
     Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
     sans-serif;
+
+  /* breakpoints */
+  /* ok so var(--breakpoint-sm) doesn't work in media queries */
+  /* so can't use these */
+  /* --breakpoint-sm: 320px;
+  --breakpoint-md: 480px;
+  --breakpoint-lg: 768px; */
 }
 
 html {
@@ -83,7 +90,7 @@ a {
 a:focus-visible {
   outline: 2px solid var(--foreground);
   outline-offset: var(--spacer-05);
-  border-radius: var(--spacer-025);
+  border-radius: var(--spacer-2);
 }
 
 /* animation for stars */

@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import Tags from "./Tags.astro";
+import Tags from "../components/Tags.astro";
 
 const allWork = Object.values(
   import.meta.glob("../pages/work/*.md", { eager: true }),
@@ -48,9 +48,9 @@ const sortedWork = allWork.sort((a: any, b: any) => {
                             </>
                           </svg>
                         </div>
-                        {/* <div class="tags">
-                        <Tags tags={tags} limit={3} />
-                      </div> */}
+                        <div class="tags">
+                          <Tags tags={tags} />
+                        </div>
                       </div>
                     </div>
                   </a>
@@ -80,7 +80,8 @@ const sortedWork = allWork.sort((a: any, b: any) => {
     }
 
     @media screen and (width > 768px) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(1, 1fr);
+      gap: var(--spacer-2);
     }
   }
   ul {
@@ -96,6 +97,18 @@ const sortedWork = allWork.sort((a: any, b: any) => {
       font-weight: bold;
       display: flex;
       flex-direction: column;
+      transition: 0.3s all ease;
+    }
+
+    a:hover {
+      @media screen and (width > 768px) {
+        transform: translateY(-2%);
+      }
+    }
+
+    a:focus-visible {
+      border-radius: var(--spacer);
+      transition: 0.3s all ease;
     }
 
     svg {
@@ -108,8 +121,16 @@ const sortedWork = allWork.sort((a: any, b: any) => {
     background-color: var(--black-9);
     overflow: hidden;
 
+    @media screen and (width > 768px) {
+      display: flex;
+    }
+
     img {
       width: 100%;
+      height: fit-content;
+      @media screen and (width > 768px) {
+        width: 33%;
+      }
     }
   }
 
@@ -122,10 +143,24 @@ const sortedWork = allWork.sort((a: any, b: any) => {
     .title {
       display: flex;
       align-items: center;
+
+      @media screen and (width > 768px) {
+        font-size: 2rem;
+      }
     }
   }
 
   .tags {
     margin-block-start: var(--spacer-05);
+    display: none;
+    @media screen and (width > 768px) {
+      display: block;
+    }
+  }
+
+  .lucide-move-right-icon {
+    @media screen and (width > 768px) {
+      display: none;
+    }
   }
 </style>
