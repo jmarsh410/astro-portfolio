@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import Tags from "./Tags.astro";
+import Tags from "../components/Tags.astro";
 
 const allWork = Object.values(
   import.meta.glob("../pages/work/*.md", { eager: true }),
@@ -12,54 +12,56 @@ const sortedWork = allWork.sort((a: any, b: any) => {
 ---
 
 <Layout>
-  <section class="work">
-    <h1>Work</h1>
-    <ul class="card__list">
-      {
-        sortedWork.map((work: any) => {
-          const {
-            frontmatter: { thumb, title, tags },
-          } = work;
-          return (
-            <li>
-              <article class="card">
-                <a href={work.url}>
-                  <div class="card__content">
-                    {thumb?.url && <img src={thumb.url} alt={thumb.alt} />}
-                    <div class="card__text">
-                      <div class="title">
-                        {title}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="lucide lucide-move-right-icon lucide-move-right"
-                        >
-                          <>
-                            <path d="M18 8L22 12L18 16" />
-                            <path d="M2 12H22" />
-                          </>
-                        </svg>
+  <main class="skinny">
+    <section class="work">
+      <h1>Work</h1>
+      <ul class="card__list">
+        {
+          sortedWork.map((work: any) => {
+            const {
+              frontmatter: { thumb, title, tags },
+            } = work;
+            return (
+              <li>
+                <article class="card">
+                  <a href={work.url}>
+                    <div class="card__content">
+                      {thumb?.url && <img src={thumb.url} alt={thumb.alt} />}
+                      <div class="card__text">
+                        <div class="title">
+                          {title}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-move-right-icon lucide-move-right"
+                          >
+                            <>
+                              <path d="M18 8L22 12L18 16" />
+                              <path d="M2 12H22" />
+                            </>
+                          </svg>
+                        </div>
+                        <div class="tags">
+                          <Tags tags={tags} />
+                        </div>
                       </div>
-                      {/* <div class="tags">
-                        <Tags tags={tags} limit={3} />
-                      </div> */}
                     </div>
-                  </div>
-                </a>
-              </article>
-            </li>
-          );
-        })
-      }
-    </ul>
-  </section>
+                  </a>
+                </article>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </section>
+  </main>
 </Layout>
 
 <style>
@@ -78,7 +80,8 @@ const sortedWork = allWork.sort((a: any, b: any) => {
     }
 
     @media screen and (width > 768px) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(1, 1fr);
+      gap: var(--spacer-2);
     }
   }
   ul {
@@ -94,6 +97,18 @@ const sortedWork = allWork.sort((a: any, b: any) => {
       font-weight: bold;
       display: flex;
       flex-direction: column;
+      transition: 0.3s all ease;
+    }
+
+    a:hover {
+      @media screen and (width > 768px) {
+        transform: translateY(-2%);
+      }
+    }
+
+    a:focus-visible {
+      border-radius: var(--spacer);
+      transition: 0.3s all ease;
     }
 
     svg {
@@ -106,8 +121,16 @@ const sortedWork = allWork.sort((a: any, b: any) => {
     background-color: var(--black-9);
     overflow: hidden;
 
+    @media screen and (width > 768px) {
+      display: flex;
+    }
+
     img {
       width: 100%;
+      height: fit-content;
+      @media screen and (width > 768px) {
+        width: 33%;
+      }
     }
   }
 
@@ -120,10 +143,24 @@ const sortedWork = allWork.sort((a: any, b: any) => {
     .title {
       display: flex;
       align-items: center;
+
+      @media screen and (width > 768px) {
+        font-size: 2rem;
+      }
     }
   }
 
   .tags {
     margin-block-start: var(--spacer-05);
+    display: none;
+    @media screen and (width > 768px) {
+      display: block;
+    }
+  }
+
+  .lucide-move-right-icon {
+    @media screen and (width > 768px) {
+      display: none;
+    }
   }
 </style>
