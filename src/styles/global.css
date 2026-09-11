@@ -39,6 +39,9 @@
 }
 
 html {
+  /* smooth animated scroll when user clicks anchor link for jump link */
+  scroll-behavior: smooth;
+
   @media (prefers-reduced-motion: no-preference) {
     @supports (animation-timeline: scroll()) {
       scroll-timeline: --html-timeline;
@@ -57,7 +60,7 @@ body {
   position: relative;
   margin-block-end: var(--spacer-4);
 
-  & > * {
+  .skinny {
     max-inline-size: 80ch;
     margin: 0 auto;
     padding-inline: var(--spacer);
