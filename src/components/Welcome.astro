@@ -155,6 +155,11 @@
     perspective: 1000px;
     display: grid;
     place-items: center;
+
+    @media screen and (width > 768px) {
+      transform: translateY(-10%);
+    }
+
     & > * {
       grid-area: 1/1;
     }
